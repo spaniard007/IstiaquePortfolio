@@ -3,14 +3,13 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         # FIX: Replace this email with recipient email
-        $mail_to = "tanbirsylhet20@gmail.com";
+        $mail_to = "fishtiaque45@gmail.com";
         
         # Sender Data
         $name    = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["full-name"])));
         $email   = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $phone   = $_POST["phone-number"];
         $subject = $_POST["subject"];
-        $budget  = $_POST["budget"];
         $file    = $_POST["file"];
         $message = trim($_POST["message"]);
         
@@ -26,7 +25,6 @@
         $content .= "Subject: $subject\n\n";
         $content .= "Email: $email\n\n";
         $content .= "Phone: $phone\n\n";
-        $content .= "Budget: $budget\n\n";
         $content .= "Message:\n$message\n";
         $content .= "File: <a href='$file' target='_blank'>$file</a>";
 
